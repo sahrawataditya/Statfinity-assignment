@@ -2,7 +2,6 @@ import { NextApiRequest } from "next";
 
 export async function GET(req: NextApiRequest) {
   const baseURL = process.env.API_BASE_URL as string;
-
   try {
     const response = await fetch(baseURL, {
       method: "GET",
