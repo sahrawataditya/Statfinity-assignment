@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_APP_API as string;
+const BASE_URL = process.env.APP_API_URL as string;
 //Get All Pokemons
 export const getAllPokemons = async () => {
   try {
