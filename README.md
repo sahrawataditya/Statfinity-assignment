@@ -17,7 +17,7 @@ Second, add .env file in the root of the app :
 
 API_BASE_URL="https://pokeapi.co/api/v2/pokemon" // PokeApi 
 API_LIMIT= // Api Pokemon limit
-NEXT_PUBLIC_APP_API="" //Application Api url like http://localhost:3000/api
+APP_API_URL="" //Application Api url like http://localhost:3000/api because API's are create in Next API
 
 ```
 Third, run the Development Server :
@@ -32,3 +32,5 @@ pnpm dev
 bun dev
 ```
 Thank You 😊
+
+Its Live at : https://pokemonv2-six.vercel.app
