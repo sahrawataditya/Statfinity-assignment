@@ -1,4 +1,4 @@
- /* eslint-disable */
+/* eslint-disable */
 namespace apiData {
   type Pokemons = {
     count: number;
@@ -13,6 +13,7 @@ namespace apiData {
   type Pokemon = {
     name: string;
     url: string;
+    uniqueKey?: number;
   };
 
   type PokemonDetail = {
