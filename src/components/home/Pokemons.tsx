@@ -32,7 +32,7 @@ const Pokemons = ({ data }: { data: apiData.Pokemon[] }) => {
         className="mb-4 p-2 border border-gray-300 rounded-lg outline-none block sm:ml-auto mx-auto sm:mx-0 placeholder:text-sm"
       />
       {/* Looping through pokemons */}
-      <div className="flex flex-wrap sm:justify-between justify-center gap-y-12">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 place-items-center gap-y-12">
         {filteredData.length > 0 ? (
           filteredData.map((item, index) => (
             <PokemonCard pokemonData={item} key={index} index={index + 1} /> //Passing index to pokemon card for routing to pokemon detail page
