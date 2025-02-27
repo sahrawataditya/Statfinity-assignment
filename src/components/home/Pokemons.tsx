@@ -3,20 +3,23 @@ import { useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard";
 
 const Pokemons = ({ data }: { data: apiData.Pokemon[] }) => {
+  const uniqueKeyArray = data.map((item, index) => {
+    return { ...item, uniqueKey: index + 1 };
+  });
   const [searchInput, setSearchInput] = useState<string>("");
   const [filteredData, setFilteredData] = useState<apiData.Pokemon[]>(
-    data || []
+    uniqueKeyArray || []
   );
 
   //Filtering pokemons by name
   useEffect(() => {
     if (searchInput) {
-      const filtered = data.filter((item) =>
+      const filtered = uniqueKeyArray.filter((item) =>
         item.name.toLowerCase().includes(searchInput.toLowerCase())
       );
       setFilteredData(filtered);
     } else {
-      setFilteredData(data);
+      setFilteredData(uniqueKeyArray);
     }
   }, [searchInput, data]);
 
@@ -35,7 +38,7 @@ const Pokemons = ({ data }: { data: apiData.Pokemon[] }) => {
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 place-items-center gap-y-12">
         {filteredData.length > 0 ? (
           filteredData.map((item, index) => (
-            <PokemonCard pokemonData={item} key={index} index={index + 1} /> //Passing index to pokemon card for routing to pokemon detail page
+            <PokemonCard pokemonData={item} key={index} /> //Passing index to pokemon card for routing to pokemon detail page
           ))
         ) : (
           <p className="text-red-500">No Pokemons Found...</p>
