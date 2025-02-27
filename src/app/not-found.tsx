@@ -1,12 +1,6 @@
 import Link from "next/link";
-
+//404 Page
 const NotFoundPage = () => {
-  function handleClick() {
-    // if (typeof window !== "undefined") {
-    //   window.location.replace("/");
-    // }
-    // window.history.back();
-  }
   return (
     <div className="flex flex-col gap-2 items-center justify-center min-h-screen">
       <div className="max-w-[240px] w-full flex flex-col gap-3 items-center justify-center">

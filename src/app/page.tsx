@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   //Fetching Pokemons in SSR
   const pokemons = await getAllPokemons();
-  if (!pokemons)
-    return <span className="text-red-500">Failed to Load Data</span>;
+  if (!pokemons.success)
+    return <span className="text-red-500">{pokemons.error}</span>;
   return <PokemonsData data={pokemons.data.results} />;
 }
